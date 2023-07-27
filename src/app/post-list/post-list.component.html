@@ -1,0 +1,12 @@
+<div *ngIf="posts">
+    <h2>Posts</h2>
+    <ul>
+      <li *ngFor="let post of posts" (click)="selectedPost = post">
+        <span>{{ post.title }}</span>
+        <button *ngIf="selectedPost === post" (click)="updatePost(post)">Update</button>
+        <button *ngIf="selectedPost === post" (click)="deletePost(post.id)">Delete</button>
+      </li>
+    </ul>
+  </div>
+  <button (click)="addPost()">Add New Post</button>
+  
